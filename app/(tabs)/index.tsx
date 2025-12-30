@@ -7,13 +7,13 @@ export default function HomeScreen() {
 
   return (
     <ScrollView style={styles.container}>
-        {/* HEADER */}
+        {/* HEADER UTAMA */}
         <View style={styles.header}>
-          <Text style={styles.title}>Virtual Lab</Text>
-          <Text style={styles.subtitle}>Fisika & Kimia</Text>
+          <Text style={styles.title}>Virtual Lab Universal</Text>
+          <Text style={styles.subtitle}>Fisika, Kimia & Matematika</Text>
         </View>
 
-        {/* --- SECTION FISIKA --- */}
+        {/* --- 1. SECTION FISIKA --- */}
         <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>⚛️ FISIKA (Bandul)</Text>
         </View>
@@ -36,7 +36,7 @@ export default function HomeScreen() {
         </View>
 
 
-        {/* --- SECTION KIMIA (BARU) --- */}
+        {/* --- 2. SECTION KIMIA --- */}
         <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>🧪 KIMIA (Titrasi)</Text>
         </View>
@@ -58,9 +58,31 @@ export default function HomeScreen() {
             </TouchableOpacity>
         </View>
 
+        {/* --- 3. SECTION MATEMATIKA (BARU) --- */}
+        <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>📐 MATEMATIKA (Geometri)</Text>
+        </View>
+
+        <View style={styles.row}>
+            <TouchableOpacity style={styles.btnMenu} onPress={() => router.push('/matematika_materi')}>
+                <Ionicons name="book" size={28} color="#009688" />
+                <Text style={styles.btnLabel}>Materi</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={styles.btnMenu} onPress={() => router.push('/matematika_simulasi')}>
+                <Ionicons name="shapes" size={28} color="#3F51B5" />
+                <Text style={styles.btnLabel}>Simulasi</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnMenu} onPress={() => router.push('/matematika_quiz')}>
+                <Ionicons name="school" size={28} color="#673AB7" />
+                <Text style={styles.btnLabel}>Kuis</Text>
+            </TouchableOpacity>
+        </View>
+
         {/* LOGIN BUTTON */}
         <TouchableOpacity style={styles.loginBtn} onPress={() => router.push('/login')}>
-            <Text style={{color:'white', fontWeight:'bold'}}>Login Akun</Text>
+            <Text style={{color:'white', fontWeight:'bold'}}>Login / Ganti Akun</Text>
         </TouchableOpacity>
 
     </ScrollView>
@@ -69,19 +91,38 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#f0f2f5' },
-  header: { backgroundColor: '#1c2e4a', padding: 30, paddingTop: 60, alignItems: 'center', marginBottom: 20 },
-  title: { fontSize: 28, fontWeight: 'bold', color: 'white' },
-  subtitle: { color: '#ccc', fontSize: 16 },
   
-  sectionHeader: { paddingHorizontal: 20, marginBottom: 10, marginTop: 10 },
-  sectionTitle: { fontSize: 18, fontWeight: 'bold', color: '#333' },
-  
-  row: { flexDirection: 'row', justifyContent: 'space-around', paddingHorizontal: 10, marginBottom: 20 },
-  btnMenu: { 
-    backgroundColor: 'white', width: '30%', padding: 15, borderRadius: 15, alignItems: 'center',
-    elevation: 3, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 3 
+  // Header Style
+  header: { 
+    backgroundColor: '#1c2e4a', 
+    padding: 30, 
+    paddingTop: 60, 
+    alignItems: 'center', 
+    marginBottom: 20,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    elevation: 5
   },
-  btnLabel: { marginTop: 5, fontSize: 12, fontWeight: '600', color: '#555' },
+  title: { fontSize: 24, fontWeight: 'bold', color: 'white' },
+  subtitle: { color: '#ccc', fontSize: 14, marginTop: 5 },
+  
+  // Section Headers
+  sectionHeader: { paddingHorizontal: 20, marginBottom: 10, marginTop: 10 },
+  sectionTitle: { fontSize: 16, fontWeight: 'bold', color: '#444', letterSpacing: 0.5 },
+  
+  // Grid Menu
+  row: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginBottom: 20 },
+  btnMenu: { 
+    backgroundColor: 'white', 
+    width: '31%', // Agar pas 3 kolom
+    paddingVertical: 15, 
+    borderRadius: 12, 
+    alignItems: 'center',
+    elevation: 2, 
+    shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 3 
+  },
+  btnLabel: { marginTop: 8, fontSize: 12, fontWeight: '600', color: '#555' },
 
+  // Footer Button
   loginBtn: { margin: 20, backgroundColor: '#333', padding: 15, borderRadius: 10, alignItems: 'center' }
 });
