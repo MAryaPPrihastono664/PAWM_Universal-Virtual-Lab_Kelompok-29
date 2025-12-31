@@ -3,11 +3,11 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-// --- FIREBASE IMPORTS ---
+// FIREBASE IMPORTS
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from './firebaseConfig'; // Pastikan path ini sesuai dengan file config Anda
 
-// --- DATA SOAL (10 Pertanyaan) ---
+// DATA SOAL (10 Pertanyaan)
 const questions = [
   { id: 1, question: "Apa yang dimaksud dengan periode (T) pada bandul sederhana?", options: ["Jumlah ayunan dalam satu detik", "Waktu yang diperlukan untuk satu ayunan penuh", "Jarak terjauh dari titik setimbang", "Kecepatan benda saat di titik terbawah"], answer: 1 },
   { id: 2, question: "Manakah faktor yang MEMPENGARUHI periode bandul sederhana?", options: ["Massa beban (m)", "Sudut simpangan awal (theta)", "Panjang tali (L)", "Warna tali"], answer: 2 },
@@ -34,7 +34,7 @@ export default function QuizScreen() {
   const [isNewRecord, setIsNewRecord] = useState(false);
   const [loadingDb, setLoadingDb] = useState(false);
 
-  // --- FUNGSI SIMPAN SKOR KE FIREBASE ---
+  // FUNGSI SIMPAN SKOR KE FIREBASE
   const saveScoreToFirebase = async (finalScore: number) => {
     const user = auth.currentUser;
     if (!user) return; // Kalau user belum login (tamu), tidak usah simpan
@@ -97,7 +97,7 @@ export default function QuizScreen() {
     setIsNewRecord(false);
   };
 
-  // --- TAMPILAN HASIL SKOR ---
+  // TAMPILAN HASIL SKOR
   if (showScore) {
     return (
       <View style={styles.container}>
@@ -146,7 +146,7 @@ export default function QuizScreen() {
     );
   }
 
-  // --- TAMPILAN SOAL (Tidak Berubah) ---
+  // TAMPILAN SOAL (Tidak Berubah)
   return (
     <View style={styles.container}>
       {/* Header Progress */}

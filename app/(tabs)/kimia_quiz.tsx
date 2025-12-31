@@ -3,7 +3,7 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-// --- FIREBASE IMPORTS ---
+//FIREBASE IMPORTS
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from './firebaseConfig';
 
@@ -83,7 +83,7 @@ export default function KimiaQuizScreen() {
   const [isNewRecord, setIsNewRecord] = useState(false);
   const [loadingDb, setLoadingDb] = useState(false);
 
-  // --- FUNGSI SIMPAN SKOR KE FIREBASE (KIMIA) ---
+  //FUNGSI SIMPAN SKOR KE FIREBASE (KIMIA)
   const saveScoreToFirebase = async (finalScore: number) => {
     const user = auth.currentUser;
     if (!user) return; // Tamu tidak simpan data
@@ -144,7 +144,7 @@ export default function KimiaQuizScreen() {
     setIsNewRecord(false);
   };
 
-  // --- TAMPILAN HASIL SKOR ---
+  //TAMPILAN HASIL SKOR
   if (showScore) {
     return (
       <View style={styles.container}>
@@ -193,7 +193,7 @@ export default function KimiaQuizScreen() {
     );
   }
 
-  // --- TAMPILAN SOAL ---
+  //TAMPILAN SOAL
   return (
     <View style={styles.container}>
       {/* Header Progress */}

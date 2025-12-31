@@ -29,7 +29,7 @@ export default function LoginScreen() {
 
     try {
       if (isRegistering) {
-        // --- LOGIKA REGISTER ---
+        //  LOGIKA REGISTER 
         if (!name) {
             Alert.alert("Error", "Nama Lengkap wajib diisi!");
             setLoading(false);
@@ -48,7 +48,7 @@ export default function LoginScreen() {
         Alert.alert("Berhasil", "Akun berhasil dibuat! Selamat datang, " + name);
         
       } else {
-        // --- LOGIKA LOGIN ---
+        //  LOGIKA LOGIN 
         await signInWithEmailAndPassword(auth, email, password);
         // Alert.alert("Sukses", "Login Berhasil!"); // Opsional
       }

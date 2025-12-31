@@ -8,14 +8,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { onAuthStateChanged, signOut, User } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 
-// --- 1. CONTEXT AUTH ---
+// 1. CONTEXT AUTH
 const AuthContext = createContext<any>(null);
 
 export function useAuth() {
   return useContext(AuthContext);
 }
 
-// --- 2. KOMPONEN NAVBAR GLOBAL ---
+// 2. KOMPONEN NAVBAR GLOBAL
 const GlobalHeader = ({ user }: any) => {
   const router = useRouter();
   const segments = useSegments(); 
@@ -24,7 +24,7 @@ const GlobalHeader = ({ user }: any) => {
   const isLoginPage = segments[0] === 'login';
   if (isLoginPage) return null;
 
-  // --- LOGIKA TAMPILAN USER (Firebase User Object) ---
+  // LOGIKA TAMPILAN USER (Firebase User Object)
   // Di Firebase, nama ada di properti 'displayName', email di 'email'
   const displayName = user?.displayName || user?.email || "User Belum Login";
   const userRole = user ? "Mahasiswa" : "Tamu";
@@ -44,7 +44,7 @@ const GlobalHeader = ({ user }: any) => {
     }
   };
 
-  // --- TAMPILAN WEB ---
+  // TAMPILAN WEB
   if (Platform.OS === 'web') {
     return (
       <View style={styles.webHeader}>
@@ -80,7 +80,7 @@ const GlobalHeader = ({ user }: any) => {
     );
   }
 
-  // --- TAMPILAN MOBILE ---
+  // TAMPILAN MOBILE
   return (
     <SafeAreaView edges={['top']} style={styles.mobileHeaderSafe}>
       <View style={styles.mobileHeaderContainer}>
@@ -108,7 +108,7 @@ const GlobalHeader = ({ user }: any) => {
   );
 };
 
-// --- 3. ROOT LAYOUT UTAMA ---
+// 3. ROOT LAYOUT UTAMA
 export default function RootLayout() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -145,7 +145,7 @@ export default function RootLayout() {
   );
 }
 
-// --- 4. STYLE CSS ---
+// 4. STYLE CSS
 const styles = StyleSheet.create({
   // Web
   webHeader: {

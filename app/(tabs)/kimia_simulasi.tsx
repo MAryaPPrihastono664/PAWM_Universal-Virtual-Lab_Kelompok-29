@@ -5,7 +5,7 @@ import Svg, { Path, Rect } from 'react-native-svg';
 const { width } = Dimensions.get('window');
 
 export default function KimiaSimulasi() {
-  // --- STATE ---
+  // STATE
   const [volumeBuret, setVolumeBuret] = useState(50); // Awal 50ml
   const [volumeDitets, setVolumeDitets] = useState(0); // Berapa ml yang sudah menetes
   const [color, setColor] = useState('#E0F7FA'); // Warna cairan (Bening)
@@ -59,7 +59,7 @@ export default function KimiaSimulasi() {
            {/* Penjepit Buret */}
            <Rect x={width/2 - 60} y="50" width="60" height="5" fill="#555" />
 
-           {/* --- BURET (Atas) --- */}
+           {/* BURET (Atas) */}
            {/* Tabung Kaca */}
            <Rect x={width/2 - 10} y="20" width="20" height="160" stroke="#333" strokeWidth="2" fill="none" />
            {/* Cairan Buret (NaOH) */}
@@ -74,7 +74,7 @@ export default function KimiaSimulasi() {
            <Path d={`M${width/2} 180 L${width/2} 195`} stroke="#333" strokeWidth="2" />
            <Rect x={width/2 - 5} y="185" width="10" height="5" fill="black" />
 
-           {/* --- ERLENMEYER (Bawah) --- */}
+           {/* ERLENMEYER (Bawah) */}
            {/* Cairan Erlenmeyer (Berubah Warna) */}
            <Path 
              d={`M${width/2 - 25} 250 L${width/2 + 25} 250 L${width/2 + 40} 300 L${width/2 - 40} 300 Z`}

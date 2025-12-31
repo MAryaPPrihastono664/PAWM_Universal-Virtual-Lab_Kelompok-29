@@ -7,7 +7,7 @@ import Svg, { Circle, Line } from 'react-native-svg';
 const { width } = Dimensions.get('window');
 
 export default function HomeScreen() {
-  // --- STATE (Variabel Tampilan) ---
+  // STATE (Variabel Tampilan)
   const [length, setLength] = useState(150); // Panjang tali (L)
   const [mass, setMass] = useState(10);      // Massa (m)
   const [initialAngle, setInitialAngle] = useState(45); // Sudut awal
@@ -21,7 +21,7 @@ export default function HomeScreen() {
   const [currentAngle, setCurrentAngle] = useState((45 * Math.PI) / 180);
   const [isRunning, setIsRunning] = useState(false);
 
-  // --- REFS (Variabel Fisika di Belakang Layar) ---
+  // REFS (Variabel Fisika di Belakang Layar)
   const physics = useRef({
     angle: (45 * Math.PI) / 180,
     velocity: 0,
@@ -33,9 +33,9 @@ export default function HomeScreen() {
     swingCountInternal: 0
   });
 
-  const requestRef = useRef<number>(); 
+  const requestRef = useRef<number>(0); 
 
-  // --- LOGIKA FISIKA ---
+  // LOGIKA FISIKA
   const animate = () => {
     const p = physics.current;
 
