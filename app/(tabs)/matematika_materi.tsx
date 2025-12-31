@@ -4,7 +4,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 export default function MatematikaMateriScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 40 }}>
-      {/* HEADER */}
+      {/* Heaeder */}
       <View style={styles.header}>
         <Ionicons name="shapes" size={60} color="white" />
         <Text style={styles.headerTitle}>Transformasi Geometri</Text>
@@ -13,7 +13,7 @@ export default function MatematikaMateriScreen() {
 
       <View style={styles.content}>
         
-        {/* 1. DEFINISI */}
+        {/* 1. Definisi */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Apa itu Transformasi Geometri?</Text>
           <Text style={styles.paragraph}>
@@ -22,7 +22,7 @@ export default function MatematikaMateriScreen() {
           </Text>
         </View>
 
-        {/* 2. TRANSLASI */}
+        {/* 2. Translasi */}
         <View style={styles.card}>
           <View style={styles.cardHeader}>
             <View style={[styles.iconBox, {backgroundColor: '#4CAF50'}]}>
@@ -46,7 +46,7 @@ export default function MatematikaMateriScreen() {
           </View>
         </View>
 
-        {/* 3. REFLEKSI */}
+        {/* 3. Refleksi */}
         <View style={styles.card}>
           <View style={styles.cardHeader}>
             <View style={[styles.iconBox, {backgroundColor: '#2196F3'}]}>
@@ -90,7 +90,7 @@ export default function MatematikaMateriScreen() {
           </View>
         </View>
 
-        {/* 4. ROTASI */}
+        {/* 4. Rotasi */}
         <View style={styles.card}>
           <View style={styles.cardHeader}>
             <View style={[styles.iconBox, {backgroundColor: '#FF9800'}]}>
@@ -116,7 +116,7 @@ export default function MatematikaMateriScreen() {
           </View>
         </View>
 
-        {/* 5. DILATASI */}
+        {/* 5. Dilatasi */}
         <View style={styles.card}>
           <View style={styles.cardHeader}>
             <View style={[styles.iconBox, {backgroundColor: '#9C27B0'}]}>

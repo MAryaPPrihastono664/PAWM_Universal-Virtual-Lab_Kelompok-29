@@ -3,11 +3,11 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-// --- FIREBASE IMPORTS ---
+// FIREBASE IMPORTS 
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from './firebaseConfig';
 
-// --- DATA SOAL MATEMATIKA (Transformasi Geometri) ---
+//  DATA SOAL MATEMATIKA (Transformasi Geometri) 
 const questions = [
   { 
     id: 1, 
@@ -84,7 +84,7 @@ export default function MatematikaQuizScreen() {
   const [isNewRecord, setIsNewRecord] = useState(false);
   const [loadingDb, setLoadingDb] = useState(false);
 
-  // --- FUNGSI SIMPAN SKOR KE FIREBASE (MATEMATIKA) ---
+  // Fungsi Penyimpan Skor Quiz Matematika ke Firebase 
   const saveScoreToFirebase = async (finalScore: number) => {
     const user = auth.currentUser;
     if (!user) return; 
@@ -191,7 +191,7 @@ export default function MatematikaQuizScreen() {
     );
   }
 
-  // --- TAMPILAN SOAL ---
+  // Tampilan Soal
   return (
     <View style={styles.container}>
       {/* Header */}

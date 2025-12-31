@@ -7,13 +7,13 @@ export default function HomeScreen() {
 
   return (
     <ScrollView style={styles.container}>
-        {/* HEADER UTAMA */}
+        {/* Main Header*/}
         <View style={styles.header}>
           <Text style={styles.title}>Virtual Lab Universal</Text>
           <Text style={styles.subtitle}>Fisika, Kimia & Matematika</Text>
         </View>
 
-        {/* --- 1. SECTION FISIKA --- */}
+        {/*  1. Section Fisika */}
         <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>⚛️ FISIKA (Bandul)</Text>
         </View>
@@ -36,7 +36,7 @@ export default function HomeScreen() {
         </View>
 
 
-        {/* --- 2. SECTION KIMIA --- */}
+        {/* 2. Section Kimia */}
         <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>🧪 KIMIA (Titrasi)</Text>
         </View>
@@ -58,7 +58,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
         </View>
 
-        {/* --- 3. SECTION MATEMATIKA (BARU) --- */}
+        {/*  3. Section Matematika  */}
         <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>📐 MATEMATIKA (Geometri)</Text>
         </View>

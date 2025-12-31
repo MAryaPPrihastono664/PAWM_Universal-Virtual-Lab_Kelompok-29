@@ -11,7 +11,7 @@ const GRID_SIZE = 40;
 type ReflectionMode = 'none' | 'x' | 'y' | 'point';
 
 export default function MatematikaSimulasi() {
-  // --- STATE ---
+  //  State 
   const [shapeType, setShapeType] = useState('triangle');
   const [transX, setTransX] = useState('0'); 
   const [transY, setTransY] = useState('0');
@@ -24,7 +24,7 @@ export default function MatematikaSimulasi() {
   const [rotation, setRotation] = useState(0); 
   const [scale, setScale] = useState(1);       
 
-  // --- DEFINISI BENTUK ---
+  // Definisi Bentuk
   const shapes = {
     triangle: [{ x: 0, y: -60 }, { x: -50, y: 40 }, { x: 50, y: 40 }],
     square: [{ x: -50, y: -50 }, { x: 50, y: -50 }, { x: 50, y: 50 }, { x: -50, y: 50 }],
@@ -32,7 +32,7 @@ export default function MatematikaSimulasi() {
     circle: { cx: 0, cy: 0, r: 40, marker: {x: 0, y: -40} } 
   };
 
-  // --- LOGIKA TRANSFORMASI ---
+  // Logika Transformasi
   // Parameter 'applyReflection' menentukan apakah kita ingin hasil akhir atau posisi 'sebelum' cermin
   const getTransformedPoint = (x: number, y: number, applyReflection: boolean) => {
     let nx = x;
@@ -74,7 +74,7 @@ export default function MatematikaSimulasi() {
   const mathToSvg = (y: number) => -y;
   const formatCoord = (x: number, y: number) => `(${Math.round(x)}, ${Math.round(-y)})`; 
 
-  // --- RENDERER UMUM (Untuk Poligon/Lingkaran) ---
+  // Render Umum (Untuk Poligon/Lingkaran) 
   const renderShapeInstance = (isGhost: boolean) => {
     // Tentukan Warna & Style berdasarkan apakah ini "Ghost" (Sebelum Refleksi) atau "Final"
     const fillColor = isGhost ? "rgba(150, 150, 150, 0.1)" : (refMode === 'none' ? "rgba(0, 122, 255, 0.3)" : "rgba(233, 30, 99, 0.3)");
@@ -94,7 +94,7 @@ export default function MatematikaSimulasi() {
             cx={CENTER_X + center.x} cy={CENTER_Y + mathToSvg(center.y)} r={Math.abs(newRadius)}
             fill={fillColor} stroke={strokeColor} strokeWidth={strokeWidth} strokeDasharray={dashArray}
           />
-          {/* Marker Rotasi (Hanya ditampilkan kalau bukan ghost agar tidak semrawut) */}
+          {/* Marker Rotasi*/}
           {!isGhost && (
             <G>
               <Line
@@ -185,7 +185,7 @@ export default function MatematikaSimulasi() {
       <Text style={styles.headerTitle}>Lab Transformasi Geometri</Text>
       <Text style={styles.subTitle}>Refleksi, Translasi, Rotasi & Dilatasi</Text>
 
-      {/* --- AREA VISUAL --- */}
+      {/* Visual Area */}
       <View style={styles.labArea}>
         <Svg height={HEIGHT} width={width}>
             {renderGrid()}
@@ -203,10 +203,10 @@ export default function MatematikaSimulasi() {
         </Svg>
       </View>
 
-      {/* --- KONTROL AREA --- */}
+      {/* Kontrol Area */}
       <View style={styles.controlsContainer}>
         
-        {/* 1. BENTUK */}
+        {/* 1. Bentuk */}
         <View style={styles.section}>
             <Text style={styles.sectionHeader}>1. Bentuk Objek</Text>
             <View style={styles.rowWrap}>
@@ -218,7 +218,7 @@ export default function MatematikaSimulasi() {
             </View>
         </View>
 
-        {/* 2. TRANSLASI */}
+        {/* 2. Translasi */}
         <View style={styles.section}>
             <Text style={styles.sectionHeader}>2. Translasi (Geser)</Text>
             <View style={styles.row}>
@@ -227,7 +227,7 @@ export default function MatematikaSimulasi() {
             </View>
         </View>
 
-        {/* 3. REFLEKSI */}
+        {/* 3. Refleksi */}
         <View style={styles.section}>
             <Text style={styles.sectionHeader}>3. Refleksi (Cermin)</Text>
             <View style={styles.rowWrap}>
@@ -245,7 +245,7 @@ export default function MatematikaSimulasi() {
                 </TouchableOpacity>
             </View>
             
-            {/* INPUT MANUAL TITIK CERMIN */}
+            {/* Input Manual Refleksi */}
             {refMode === 'point' && (
                 <View style={styles.mirrorInputBox}>
                     <Text style={styles.mirrorInputLabel}>Koordinat Titik Cermin:</Text>
@@ -263,7 +263,7 @@ export default function MatematikaSimulasi() {
             )}
         </View>
 
-        {/* 4. ROTASI & DILATASI */}
+        {/* 4. Rotasi & Dilatasi */}
         <View style={styles.section}>
             <Text style={styles.sectionHeader}>4. Rotasi & Dilatasi</Text>
             <View style={styles.row}>
