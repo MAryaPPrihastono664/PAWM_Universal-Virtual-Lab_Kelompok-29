@@ -2,13 +2,14 @@
   "name": "pawm_universal-virtual-lab_kelompok-29",
   "main": "expo-router/entry",
   "version": "1.0.0",
-  "scripts": {
+"scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "build:web": "npx expo export -p web"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
