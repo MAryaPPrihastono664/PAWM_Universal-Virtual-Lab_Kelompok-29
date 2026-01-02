@@ -1,10 +1,52 @@
-# Welcome to your Expo app 👋
+# Virtual Lab Universal (Mobile & Web)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplikasi pembelajaran interaktif yang menyediakan simulasi laboratorium virtual untuk mata pelajaran Fisika, Kimia, dan Matematika. Dibangun menggunakan React Native (Expo) untuk mendukung akses lintas platform (Android, iOS, dan Web). Dibangun oleh
+- 18223016 Muhammad Daffa Al Ghifari
+- 18223068 Muhammad Arya Putra Prihastono
 
-## Get started
 
-1. Install dependencies
+## Fitur Utama
+
+* **Fisika:** Simulasi Bandul Sederhana (Simple Pendulum) dengan pengaturan panjang tali, massa, dan sudut.
+* **Kimia:** Simulasi Titrasi Asam-Basa dengan indikator perubahan warna visual.
+* **Matematika:** Visualisasi Transformasi Geometri (Refleksi, Translasi).
+* **Autentikasi:** Login dan Registrasi pengguna yang aman menggunakan Firebase Auth.
+* **Kuis & Skor:** Evaluasi pemahaman siswa dengan penyimpanan skor ke Firestore Database.
+* **Responsif:** Tampilan UI yang menyesuaikan layar Mobile dan Web.
+
+## Teknologi yang Digunakan
+
+* **Framework:** React Native (Expo Router)
+* **Bahasa:** TypeScript
+* **Backend:** Firebase (Authentication & Firestore)
+* **Grafis:** react-native-svg (untuk visualisasi simulasi)
+* **UI Components:** react-native-safe-area-context, expo-vector-icons
+
+
+
+## Cara Menjalankan Aplikasi (Local Development)
+
+Ikuti langkah-langkah berikut untuk menjalankan kode sumber ini di komputer Anda.
+
+### 1. Prasyarat (Prerequisites)
+
+Pastikan Anda telah menginstal software berikut:
+* Node.js (Versi LTS direkomendasikan).
+* Git.
+* Aplikasi Expo Go di HP Anda (tersedia di Play Store / App Store) untuk testing fisik.
+
+### 2. Instalasi
+
+Clone repositori ini dan masuk ke direktori proyek:
+
+```bash
+git clone https://github.com/MAryaPPrihastono664/PAWM_Universal-Virtual-Lab_Kelompok-29
+cd https://github.com/MAryaPPrihastono664/PAWM_Universal-Virtual-Lab_Kelompok-29
+```
+
+### 3. Mulai Setelah Masuk Direktori yang Sesuai 
+
+1. Install dependencies 
 
    ```bash
    npm install
@@ -15,36 +57,3 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```bash
    npx expo start
    ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
