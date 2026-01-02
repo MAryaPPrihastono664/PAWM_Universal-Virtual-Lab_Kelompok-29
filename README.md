@@ -41,7 +41,7 @@ Clone repositori ini dan masuk ke direktori proyek:
 
 ```bash
 git clone https://github.com/MAryaPPrihastono664/PAWM_Universal-Virtual-Lab_Kelompok-29
-cd https://github.com/MAryaPPrihastono664/PAWM_Universal-Virtual-Lab_Kelompok-29
+cd PAWM_Universal-Virtual-Lab_Kelompok-29
 ```
 
 ### 3. Mulai Setelah Masuk Direktori yang Sesuai 
