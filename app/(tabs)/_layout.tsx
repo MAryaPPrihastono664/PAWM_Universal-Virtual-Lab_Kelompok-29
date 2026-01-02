@@ -27,7 +27,7 @@ const GlobalHeader = ({ user }: any) => {
   // LOGIKA TAMPILAN USER (Firebase User Object)
   // Di Firebase, nama ada di properti 'displayName', email di 'email'
   const displayName = user?.displayName || user?.email || "User Belum Login";
-  const userRole = user ? "Mahasiswa" : "Tamu";
+  const userRole = user ? "Siswa" : "Tamu";
   
   const handleRightButton = async () => {
     if (user) {
